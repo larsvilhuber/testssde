@@ -13,16 +13,16 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: MM
+title: Social Science Data Editors
 email:
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-twitter_username: username
-github_username: username
+  Guidance for authors wishing to create data and code supplements, and for replicators. 
 minimal_mistakes_skin: default
 search: true
+copyright: 'Copyright &copy; 2023 Social Science Data Editors. All Rights Reserved.'
+credits: 'Credits: Landing Page is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com/">Start Bootstrap</a>.'
+logo: "/assets/ssde-logo-only.jpeg"
+css: "/assets/css/extra.css" # extra customization, loaded after main.css
 
 # Build settings
 markdown: kramdown
@@ -39,14 +39,15 @@ include:
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+   - Gemfile
+   - Gemfile.lock
+   - node_modules
+   - vendor/bundle/
+   - vendor/cache/
+   - vendor/gems/
+   - vendor/ruby/
+   - minimal-mistakes-master/
 
 # Plugins (previously gems:)
 plugins:
@@ -58,34 +59,26 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "First Lastname"
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  name   : "Social Science Data Editors"
+  avatar : 
+  bio    : "A guild of data editors"
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://"
+    - label: "Who we are"
+      icon: "fas fa-fw fa-users"
+      url: "about.html"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://github.com/social-science-data-editors"
 
 footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
 
 defaults:
   # _posts
@@ -94,6 +87,7 @@ defaults:
       type: posts
     values:
       layout: single
+      output: false
       author_profile: true
       read_time: true
       comments: true
@@ -106,6 +100,12 @@ defaults:
     values:
       layout: single
       author_profile: true
+  - scope:
+      path: "_projects"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
 
 category_archive:
   type: liquid
@@ -113,3 +113,8 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:path/
